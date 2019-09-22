@@ -6,7 +6,7 @@
 Create a Web API that when called
 1) Calls, combines and returns the result of:
 - http://jsonplaceholder.typicode.com/photos
-- http://jsonplaceholder.typicode.com/photos
+- http://jsonplaceholder.typicode.com/albums
 2) Allows an integrator to filter on the user id - so just returns the albums and photos relevant to a single user.
 
 ## Solution
