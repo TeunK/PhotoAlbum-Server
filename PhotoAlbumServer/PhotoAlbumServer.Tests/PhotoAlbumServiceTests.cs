@@ -1,6 +1,7 @@
 using NSubstitute;
 using NUnit.Framework;
 using PhotoAlbumServer.Data.Interfaces;
+using PhotoAlbumServer.Domain;
 using PhotoAlbumServer.External.DTO;
 using PhotoAlbumServer.Interfaces.Factories;
 using PhotoAlbumServer.Interfaces.Services;
@@ -202,6 +203,60 @@ namespace Tests
             Assert.AreEqual(albumId, result.First().Photos.First().AlbumId);
             _mockPhotoRepository.Received(1).GetAll(Arg.Any<Expression<Func<PhotoDto, bool>>>());
             _mockAlbumRepository.Received(1).GetAll(Arg.Any<Expression<Func<AlbumDto, bool>>>());
+        }
+
+        [Test]
+        public void MergePhotosWithAlbums_EmptyPhotosAndAlbumsList_ReturnsEmptyList()
+        {
+            var photosList = new List<Photo>();
+            var albumsList = new List<Album>();
+            var result = _service.MergePhotosWithAlbums(photosList, albumsList);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Count());
+        }
+
+        [Test]
+        public void MergePhotosWithAlbums_PhotosWithoutAlbums_ReturnsEmptyList()
+        {
+            var photosList = new List<Photo> { new Photo { Id = 1, AlbumId = 1 }, new Photo { Id = 2, AlbumId = 2} };
+            var albumsList = new List<Album>();
+            var result = _service.MergePhotosWithAlbums(photosList, albumsList);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0, result.Count());
+        }
+
+        [Test]
+        public void MergePhotosWithAlbums_AlbumsWithoutPhotos_ReturnsEmptyAlbums()
+        {
+            var photosList = new List<Photo>();
+            var albumsList = new List<Album> { new Album { Id = 1}, new Album { Id = 2 } };
+            var result = _service.MergePhotosWithAlbums(photosList, albumsList);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count());
+            Assert.AreEqual(0, result.First(photoAlbum => photoAlbum.Album.Id == 1).Photos.Count());
+            Assert.AreEqual(0, result.First(photoAlbum => photoAlbum.Album.Id == 2).Photos.Count());
+            CollectionAssert.AreEquivalent(new List<int> { 1, 2 }, result.Select(photoAlbum => photoAlbum.Album.Id));
+        }
+
+        [Test]
+        public void MergePhotosWithAlbums_PhotosIntersectWithAlbums_ReturnsEmptyAlbums()
+        {
+            var photosList = new List<Photo> {
+                new Photo { Id = 1, AlbumId = 1},
+                new Photo { Id = 2, AlbumId = 1},
+                new Photo { Id = 3, AlbumId = 1},
+                new Photo { Id = 4, AlbumId = 2},
+                new Photo { Id = 5, AlbumId = 2},
+            };
+            var albumsList = new List<Album> { new Album { Id = 1}, new Album { Id = 2 } };
+            var result = _service.MergePhotosWithAlbums(photosList, albumsList);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count());
+            Assert.AreEqual(3, result.First(photoAlbum => photoAlbum.Album.Id == 1).Photos.Count());
+            Assert.AreEqual(2, result.First(photoAlbum => photoAlbum.Album.Id == 2).Photos.Count());
+            CollectionAssert.AreEquivalent(new List<int> { 1, 2 }, result.Select(photoAlbum => photoAlbum.Album.Id));
+            CollectionAssert.AreEquivalent(new List<int> { 1, 2, 3 }, result.First(photoAlbum => photoAlbum.Album.Id == 1).Photos.Select(photo => photo.Id));
+            CollectionAssert.AreEquivalent(new List<int> { 4, 5 }, result.First(photoAlbum => photoAlbum.Album.Id == 2).Photos.Select(photo => photo.Id));
         }
     }
 }

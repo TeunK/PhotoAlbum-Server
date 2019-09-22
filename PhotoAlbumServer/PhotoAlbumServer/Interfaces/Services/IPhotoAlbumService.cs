@@ -7,5 +7,6 @@ namespace PhotoAlbumServer.Interfaces.Services
     {
         IEnumerable<PhotoAlbum> GetAll();
         IEnumerable<PhotoAlbum> GetByUserId(int userId);
+        IEnumerable<PhotoAlbum> MergePhotosWithAlbums(IEnumerable<Photo> photos, IEnumerable<Album> albums);
     }
 }
