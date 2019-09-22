@@ -1,0 +1,12 @@
+PhotoAlbumServer/.vs/
+PhotoAlbumServer/PhotoAlbumServer.Clients/bin/
+PhotoAlbumServer/PhotoAlbumServer.Clients/obj/
+PhotoAlbumServer/PhotoAlbumServer.Data.Tests/bin/
+PhotoAlbumServer/PhotoAlbumServer.Data.Tests/obj/
+PhotoAlbumServer/PhotoAlbumServer.Data/bin/
+PhotoAlbumServer/PhotoAlbumServer.Data/obj/
+PhotoAlbumServer/PhotoAlbumServer.External/obj/
+PhotoAlbumServer/PhotoAlbumServer.Tests/bin/
+PhotoAlbumServer/PhotoAlbumServer.Tests/obj/
+PhotoAlbumServer/PhotoAlbumServer.External/bin/
+PhotoAlbumServer/PhotoAlbumServer/obj/

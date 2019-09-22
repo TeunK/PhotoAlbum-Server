@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoAlbumServer", "PhotoAlbumServer\PhotoAlbumServer.csproj", "{8024A4AF-535F-409B-8074-8DC0F1F575E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BB332214-5E25-4F90-8785-FD16B6DF38C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbumServer.Tests", "PhotoAlbumServer.Tests\PhotoAlbumServer.Tests.csproj", "{D899C771-D115-4B8A-829D-233BCBA91DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbumServer.Clients", "PhotoAlbumServer.Clients\PhotoAlbumServer.Clients.csproj", "{19C713C4-5CAE-4041-BB64-D5CAC7F183DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbumServer.Data", "PhotoAlbumServer.Data\PhotoAlbumServer.Data.csproj", "{99134F6E-C600-4EBB-BFD4-D561F8429495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbumServer.External", "PhotoAlbumServer.External\PhotoAlbumServer.External.csproj", "{EF80E24E-06F2-40EC-BD8F-90E5C163F301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAlbumServer.Data.Tests", "PhotoAlbumServer.Data.Tests\PhotoAlbumServer.Data.Tests.csproj", "{6F977D3E-9174-44B7-B7C9-417BA3EF11CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8024A4AF-535F-409B-8074-8DC0F1F575E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8024A4AF-535F-409B-8074-8DC0F1F575E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8024A4AF-535F-409B-8074-8DC0F1F575E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8024A4AF-535F-409B-8074-8DC0F1F575E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D899C771-D115-4B8A-829D-233BCBA91DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D899C771-D115-4B8A-829D-233BCBA91DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D899C771-D115-4B8A-829D-233BCBA91DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D899C771-D115-4B8A-829D-233BCBA91DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C713C4-5CAE-4041-BB64-D5CAC7F183DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C713C4-5CAE-4041-BB64-D5CAC7F183DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C713C4-5CAE-4041-BB64-D5CAC7F183DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C713C4-5CAE-4041-BB64-D5CAC7F183DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99134F6E-C600-4EBB-BFD4-D561F8429495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99134F6E-C600-4EBB-BFD4-D561F8429495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99134F6E-C600-4EBB-BFD4-D561F8429495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99134F6E-C600-4EBB-BFD4-D561F8429495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF80E24E-06F2-40EC-BD8F-90E5C163F301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF80E24E-06F2-40EC-BD8F-90E5C163F301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF80E24E-06F2-40EC-BD8F-90E5C163F301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF80E24E-06F2-40EC-BD8F-90E5C163F301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F977D3E-9174-44B7-B7C9-417BA3EF11CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F977D3E-9174-44B7-B7C9-417BA3EF11CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F977D3E-9174-44B7-B7C9-417BA3EF11CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F977D3E-9174-44B7-B7C9-417BA3EF11CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D899C771-D115-4B8A-829D-233BCBA91DE6} = {BB332214-5E25-4F90-8785-FD16B6DF38C1}
+		{6F977D3E-9174-44B7-B7C9-417BA3EF11CC} = {BB332214-5E25-4F90-8785-FD16B6DF38C1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {358EEA64-FFAB-4DF3-849F-083FB1B5D724}
+	EndGlobalSection
+EndGlobal
